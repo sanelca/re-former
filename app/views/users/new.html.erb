@@ -1,0 +1,6 @@
+<%= form_tag(request.base_url + '/users#create') do %>
+  <%= text_field_tag 'user[username]' %>
+  <%= text_field_tag 'user[email]' %>
+  <%= password_field_tag 'user[password]' %>
+  <%= submit_tag 'Save' %>
+<% end -%>
