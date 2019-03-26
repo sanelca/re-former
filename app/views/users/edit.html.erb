@@ -24,7 +24,7 @@
   </p>
   <p>
     <%= f.label :password %><br />
-    <%= f.password_field :password %>
+    <%= f.password_field :password, :value => @user.password %>
   </p>
   <p>
     <%= f.submit %>
