@@ -1,0 +1,51 @@
+<!--form action="http://localhost:3000/users#create" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="UbWMKp8ND0WjwSRJTnyfgcUxVKOVekljGaJ379pbgcj+9gvqE+p7Wf6Af85obAklybNRu5hHioX+g5ue0nZsMA==">
+  <div>
+    <label for="user_username">Username</label>
+    <input type="text" name="user[username]" id="user_username">
+  </div>
+  <div>
+    <label for="user_email">Email</label>
+    <input type="text" name="user[email]" id="user_email">
+  </div>
+  <div>
+    <label for="user_password">Password</label>
+    <input type="password" name="user[password]" id="user_password">
+  </div>
+  <input type="submit" name="commit" value="Save">
+</form-->
+<%= form_for(@user) do |f| %>
+  <p>
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :password %><br />
+    <%= f.password_field :password, :value => @user.password %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+
+<% if false %>
+  <%= form_tag(request.base_url + '/users#create') do %>
+    <p>
+      <%= label_tag 'user_username', 'Username' %>
+      <%= text_field_tag 'user[username]' %>
+    </p>
+    <p>
+      <%= label_tag 'user_email', 'Email' %>
+      <%= text_field_tag 'user[email]' %>
+    </p>
+    <p>
+      <%= label_tag 'user_password', 'Password' %>
+      <%= password_field_tag 'user[password]' %>
+    </p>
+    <%= submit_tag 'Save' %>
+  <% end -%>
+<% end %>
